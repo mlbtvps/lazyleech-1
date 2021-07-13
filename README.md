@@ -89,11 +89,11 @@ After add save file
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/noobsohail/lazyleech)
 ## Credits 📍
 
-[@TheKneesocks](https://t.me/TheKneesocks)
+[@TheKneesocks](https://t.me/TheKneesocks) | [@SohailKhan_Anime](https://t.me/SohailKhan_Anime)
 
 ## Points To Be Noted 
 
-- This repo is fork of [Anime Leeching Group](https://t.me/joinchat/BWHQ6lb_FmSP3pxfyYolfg) Bot Leafa-chan.
+- This repo is fork of [Noob Leeching Group](https://t.me/@Noob_Leechers) Bot @noob_leecher_bot.
 - I dont own this repo, I have just Uploaded this code on github.
 - This Repo is meant for small groups.
 - Heroku Supported.
