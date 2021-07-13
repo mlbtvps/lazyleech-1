@@ -1,0 +1,53 @@
+### if you wish to disable this just fork repo and delete this plugin/file
+### if you want different uploader, just replace rsslink
+
+import os
+import requests
+import re
+from bs4 import BeautifulSoup as bs
+from motor.motor_asyncio import AsyncIOMotorClient
+from motor.core import AgnosticClient, AgnosticDatabase, AgnosticCollection
+from apscheduler.schedulers.asyncio import AsyncIOScheduler
+from .. import app, ADMIN_CHATS, ForceDocumentFlag, DB_URL
+from .leech import initiate_torrent
+from config import Config
+
+rsslink = list(filter(lambda x: x, map(str, os.environ.get("NYAA_RSS_LINKS", "https://nyaa.si/?page=rss&u=subsplease https://nyaa.si/?page=rss&q=SSA&c=0_0&f=0").split(' '))))
+
+if Config.DB_URL:
+    DB_URL=Config.DB_URL
+    _MGCLIENT: AgnosticClient = AsyncIOMotorClient(DB_URL)
+    _DATABASE: AgnosticDatabase = _MGCLIENT["leech"]
+    def get_collection(name: str) -> AgnosticCollection:
+        """ Create or Get Collection from your database """
+        return _DATABASE[name]
+    def _close_db() -> None:
+        _MGCLIENT.close()
+    
+    A = get_collection('feed')
+    
+    async def rss_parser():
+        cr = []
+        for i in rsslink:
+            da = bs(requests.get(i).text, features="html.parser")
+            if (await A.find_one({'site':i})) is None:
+                await A.insert_one({'_id': str(da.find('item').find('title')), 'site': i})
+                return
+            count_a = 0
+            for ii in da.findAll('item'):
+                if (await A.find_one({'site': i}))['_id'] == str(ii.find('title')):
+                    break
+                cr.append([str(ii.find('title')), (re.sub(r'<.*?>(.*)<.*?>', r'\1', str(ii.find('guid')))).replace('view', 'download')+'.torrent'])
+                count_a+=1
+            if count_a!=0:
+                await A.find_one_and_delete({'site': i})
+                await A.insert_one({'_id': str(da.find('item').find('title')), 'site': i})
+        for i in cr:
+            for ii in ADMIN_CHATS:
+                msg = await app.send_message(ii, f"📤 New anime uploaded 📤\n\n{i[0]}\n{i[1]}")
+                flags = ()
+                await initiate_torrent(app, msg, i[1], flags)
+
+    scheduler = AsyncIOScheduler()
+    scheduler.add_job(rss_parser, "interval", minutes=int(os.environ.get('RSS_RECHECK_INTERVAL', 1)), max_instances=10)
+    scheduler.start()
