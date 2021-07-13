@@ -84,9 +84,11 @@ edit config.py
 Add Vars :
 Mandatory API_ID,API_HASH,BOT_TOKEN,Admin_chats .
 After add save file 
+'''
 
 ## Deploy
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/noobsohail/lazyleech)
+
 ## Credits 📍
 
 [@TheKneesocks](https://t.me/TheKneesocks) | [@SohailKhan_Anime](https://t.me/SohailKhan_Anime)
