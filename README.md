@@ -11,6 +11,7 @@
 - [TEST THE BOT (DEMO)](https://t.me/joinchat/HC7YmklXMSRPH3N2)
 - [CREDITS](#credits-)
 - [POINTS TO BE NOTED](#points-to-be-noted)
+- [Deplou](#deploy)
 
 
 # What is this repo about?
