@@ -80,15 +80,24 @@ deletewatermark
 testwatermark
 ```
 ## How To Deploy 
+
 '''
-edit config.py
-Add Vars :
-Mandatory API_ID,API_HASH,BOT_TOKEN,Admin_chats .
-After add save file 
+**FIRST FORK THIS REPO** IF YOU DON'T KNOW GOOGLE HOW TO FORK GITHUB REPO
+
+**CONFIG.PY**
+
+EDIT CONFIG FILE ADD YOUR CREDENTIALS 
+API ID | API HASH | BOT TOKEN | ADMIN CHATS 
+YOU CAN ADD ADMIN CHATS VALUE IN LICHER_CHAT | EVERYONE_CHATS
+
+ONCE THIS DONE JUST SUBMIT.
+
+COPY LINK FROM DEPLOY REPLACE (ADD_YOUR_FORK_LINK) with your github repo link
+
 '''
 
 ## Deploy
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/noobsohail/lazyleech)
+https://heroku.com/deploy?template=add_your_fork_link
 
 ## Credits 📍
 
