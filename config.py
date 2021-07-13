@@ -1,5 +1,3 @@
-import os
-
 class Config(object):
     DB_URL = os.environ.get("DB_URL", "mongodb+srv://lazy:moobleecher@457@cluster0.9svdp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", " 1797025883:AAEKRpNY4B88s9PyG-W8kwVSt1QZgAFwOJM")
