@@ -1,8 +1,10 @@
+from lazyleech import BOT_USERNAME
 import os
 
 class Config(object):
     DB_URL = os.environ.get("DB_URL", "xxxxxxxxxxxx")
     BOT_TOKEN = os.environ.get("BOT_TOKEN", "xxxxxxxxx")
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "xxxxx")
     EVERYONE_CHATS = os.environ.get("EVERYONE_CHATS", "-100xxxx")
     API_ID = int(os.environ.get("API_ID", xx))
     API_HASH = os.environ.get("API_HASH", "xxxx")

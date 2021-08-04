@@ -17,6 +17,7 @@ EVERYONE_CHATS = list(map(int, EVERYONE_CHATS.split(' '))) if EVERYONE_CHATS els
 ADMIN_CHATS=Config.ADMIN_CHATS
 ADMIN_CHATS = list(map(int, ADMIN_CHATS.split(' '))) if ADMIN_CHATS else []
 ALL_CHATS = EVERYONE_CHATS + ADMIN_CHATS
+BOT_USERNAME = Config.BOT_USERNAME
 # LICHER_* variables are for @animebatchstash and similar, not required
 LICHER_CHAT=Config.LICHER_CHAT
 try:
