@@ -28,7 +28,6 @@ LICHER_STICKER = os.environ.get('LICHER_STICKER')
 LICHER_FOOTER = os.environ.get('LICHER_FOOTER', '').encode().decode('unicode_escape')
 LICHER_PARSE_EPISODE = os.environ.get('LICHER_PARSE_EPISODE')
 LICHER_PARSE_EPISODE = LICHER_PARSE_EPISODE and LICHER_PARSE_EPISODE != '0'
-BOT_USERNAME = os.environ.get('BOT_USERNAME', "@Asuna_LeechBot")
 
 PROGRESS_UPDATE_DELAY = int(os.environ.get('PROGRESS_UPDATE_DELAY', 5))
 MAGNET_TIMEOUT = int(os.environ.get('LEECH_TIMEOUT', 60))
