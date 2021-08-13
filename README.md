@@ -97,7 +97,7 @@ testwatermark
 '''
 
 ## Deploy
-https://heroku.com/deploy?template=add_your_fork_link
+[deploy](https://heroku.com/deploy?template=https://github.com/Subroz/lazyleech)
 
 ## Credits 📍
 
