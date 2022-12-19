@@ -1,4 +1,4 @@
-FROM ubuntu:21.04
+FROM ubuntu:latest
 
 COPY run.sh requirements.txt testwatermark.jpg /app/
 COPY lazyleech /app/lazyleech/
