@@ -11,5 +11,5 @@ RUN apt -y update && \
     && echo "Etc/UTC" > /etc/timezone \
     && pip3 install -r /app/requirements.txt
 COPY . .
-#EXPOSE 8080
+EXPOSE 8080
 CMD ["bash","run.sh"]
